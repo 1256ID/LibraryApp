@@ -11,22 +11,26 @@
         <title>Library</title>
     </head>
     <body>
-        <div class="container-fluid p-5 m-3">
-            <div class="row">
-                <div class="col-12">
-                    <ol>          
-                        @foreach (var book in Model)
-                        {                          
-                            <li>
-                                <h3>@book.Title</h3>
-                                <h4>@book.Author</h4>
-                                <p>@book.Description</p>
-                            </li>  
-                        }
-                    </ol>
+    <div class="container-fluid d-flex flex-column p-5 m-3 align-items-center justify-content-center">
+        <div class="row p-5">
+            <div class="col-12 p-2 m-3 mb-12" style="max-width:500px;">
+                <ol>          
+                    @foreach (var book in Model)
+                    {                          
+                        <li>
+                            <h3>@book.Title</h3>
+                            <h5>@book.Author</h5>
+                            <p>@book.Description</p>
+                        </li>  
+                    }
+                </ol>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <a class="btn btn-dark p-2" href="/create">Add Book</a>
                 </div>
+                
             </div>
         </div>
+    </div>
         <footer class="container-fluid bg-dark text-white py-3 text-center mt-auto p-5">
             &copy; 2025 LibraryApp. Alla rättigheter förbehållna.
         </footer>
