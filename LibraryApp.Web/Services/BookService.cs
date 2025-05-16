@@ -45,7 +45,19 @@ public class BookService
     ];
 
     public void Add(Book book) => books.Add(book);
+
+    public void Update(Book book)
+    {
+        if (book != null)
+        {
+            Book? currentBook = books.SingleOrDefault(c => c.Id == book.Id);
+            currentBook = book;
+        }
+    }
+   
     public Book? GetById(Guid id) => books.SingleOrDefault(c => c.Equals(id));
     public Book[] GetAll() => [.. books];
     public void Remove(Book book) => books.Remove(book);
+
+    
 }
