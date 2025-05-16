@@ -1,0 +1,35 @@
+﻿@model LibraryApp.Web.Models.Book[]
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Library</title>
+    </head>
+    <body>
+        <div class="container-fluid p-5 m-3">
+            <div class="row">
+                <div class="col-12">
+                    <ol>          
+                        @foreach (var book in Model)
+                        {                          
+                            <li>
+                                <h3>@book.Title</h3>
+                                <h4>@book.Author</h4>
+                                <p>@book.Description</p>
+                            </li>  
+                        }
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <footer class="container-fluid bg-dark text-white py-3 text-center mt-auto p-5">
+            &copy; 2025 LibraryApp. Alla rättigheter förbehållna.
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
